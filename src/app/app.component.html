@@ -2,7 +2,7 @@
     <div class="row">
         <h2 class="text-primary col-12">
             Simple Todo List
-            <span class="title-info">made with Angular 4, Bootstrap</span>
+            <span class="title-info">made with Angular 4, Bootstrap v4, Sweetalert2</span>
         </h2>
         
         <div class="col-12">
@@ -158,85 +158,3 @@
         </div>
     </div>
 </div>
-
-<!--<div>
-  <h2>Simple Todo List with Angular2</h2>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th class="status">Status</th>
-        <th class="judul">Judul</th>
-        <th class="desc">Deskripsi</th>
-        <th class="tanggal">Tanggal Mulai</th>
-        <th class="tanggal">Tanggal Selesai</th>
-        <th>Prioritas</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-            <select name='status' [(ngModel)]='status' class='form-control' (ngModelChange)="selectStatus($event)" required>
-                <option [ngValue]='0' [selected]="status == 0">Belum</option>
-                <option [ngValue]='1' [selected]="status == 1">Sudah</option>
-            </select>
-        </td>
-        <td>
-            <input name='judul' class="form-control" placeholder="Judul" [(ngModel)]="judul" required>
-        </td>
-        <td>
-            <textarea name='deskripsi' class="form-control" placeholder="Deskripsi" [(ngModel)]="deskripsi" required></textarea>
-        </td>
-        <td>
-            <my-date-picker name="tgl_mulai" [options]="myDatePickerOptions"
-                [(ngModel)]="tgl_mulai" required></my-date-picker>
-        </td>
-        <td>
-            <my-date-picker name="tgl_selesai" [options]="myDatePickerOptions"
-                [(ngModel)]="tgl_selesai" required></my-date-picker>
-        </td>
-        <td>
-            <select name='prioritas' [(ngModel)]='prioritas' class='form-control' (ngModelChange)="selectPrioritas($event)" required>
-                <option [ngValue]='1' [selected]="prioritas == 1">High</option>
-                <option [ngValue]='2' [selected]="prioritas == 2">Medium</option>
-                <option [ngValue]='3' [selected]="prioritas == 3">Low</option>
-            </select>
-        </td>
-        <td>
-            <button type="submit" class="btn btn-md btn-success" (click)="submit()">Tambah</button>
-        </td>
-      </tr>
-      <tr *ngFor="let d of data; let i = index;">
-        <td>
-            <button *ngIf="d.status" class="btn btn-sm btn-success" (click)='changeStatus(i, false)'>Sudah</button>
-            <button *ngIf="!d.status" class="btn btn-sm btn-danger" (click)='changeStatus(i, true)'>Belum</button>
-        </td>
-        <td>
-            {{d.judul}}
-        </td>
-        <td>
-            {{d.deskripsi}}
-        </td>
-        <td>
-            {{changeDate(d.tgl_mulai)}}
-        </td>
-        <td>
-            {{changeDate(d.tgl_selesai)}}
-        </td>
-        <td>
-            <div *ngIf="d.prioritas == 1" class="badge badge-danger">High</div>
-            <div *ngIf="d.prioritas == 2" class="badge badge-warning">Medium</div>
-            <div *ngIf="d.prioritas == 3" class="badge badge-primary">Low</div>
-        </td>
-        <td>
-            <button class="btn btn-sm btn-info">edit</button>
-            <button class="btn btn-sm btn-danger" (click)="delete(i)">X</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div *ngIf="model.length == 0" class="text-center text-danger">
-      Data Empty
-  </div>
-</div>-->
