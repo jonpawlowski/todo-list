@@ -1,0 +1,86 @@
+$white : #fff;
+$color-danger : #ef1c1c;
+$color-success : #64DD17;
+$color-warning : #FFD600;
+$grey : #666;
+
+.list {
+    padding-top: 10px;
+}
+
+.title-info {
+    font-size: 20px;
+    color: $grey;
+}
+
+.edit-button {
+    width: 10px;
+}
+
+label {
+    font-size: 12px;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 6px;
+    border: 1px solid transparent;
+    min-width: 10px;
+    line-height: 1;
+    color: $white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 99999px
+}
+
+.container {
+    padding-top: 40px;
+    width: 95%;
+}
+
+.badge.badge-danger {
+  background-color: $color-danger
+}
+
+.badge.badge-success {
+    background-color: $color-success
+}
+
+.badge.badge-warning {
+    background-color: $color-warning
+}
+
+.status {
+    width: 70px
+}
+
+.desc {
+    width: 480px;
+}
+
+.judul {
+    width: 230px;
+}
+
+.tanggal {
+    width: 200px;
+}
+
+.status {
+    width: 120px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid $color-success;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid $color-danger;
+}
