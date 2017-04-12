@@ -122,8 +122,8 @@ export class AppComponent implements OnInit {
 
     // change tgl_selesai to mydatepicker format
     const tglSelesai_temp = new Date(this.data[index].tgl_selesai);
-    this.data[index].tgl_selesai = { date: { year: tglMulai_temp.getFullYear(),
-      month: tglMulai_temp.getMonth() + 1, day: tglMulai_temp.getDate() } };
+    this.data[index].tgl_selesai = { date: { year: tglSelesai_temp.getFullYear(),
+      month: tglSelesai_temp.getMonth() + 1, day: tglSelesai_temp.getDate() } };
 }
 
   // save edit data row
