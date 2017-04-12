@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "new"
+    "name": "todo-list"
   },
   "apps": [
     {
@@ -21,12 +21,9 @@
       "styles": [
         "styles.scss",
         "./assets/bootstrap/bootstrap.min.css",
-        "./assets/ng2-toastr.css",
-        "../node_modules/sweetalert2/dist/sweetalert2.min.css"
+        "./assets/ng2-toastr.css"
       ],
-      "scripts": [
-        "../node_modules/sweetalert2/dist/sweetalert2.min.js"
-      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

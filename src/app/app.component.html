@@ -1,23 +1,28 @@
+<!--CONTAINER-->
 <div class="container">
     <div class="row">
+
+        <!--TITLE-->
         <h2 class="text-primary col-12">
             Simple Todo List
-            <span class="title-info">made with Angular 4, Bootstrap v4, Sweetalert2</span>
+            <span class="title-info">made with Angular 4, Bootstrap v4, toastr</span>
         </h2>
         
+        <!--ROW-->
         <div class="col-12">
             <hr>
         </div>
+
+        <!--TAMBAH DATA SECTION-->
         <div class="col-12">
             <h4>Tambah Data</h4>
         </div>
+
+        <!--FORM TAMBAH DATA-->
         <form class="col-12" (ngSubmit)="submit()">
             <div class="row col-12">
-                <div class="col-md-1">
-                    <label><b>Status</b></label><br>
-                    <div *ngIf="status" class="btn btn-success" (click)="statusInput(0)">Sudah</div>
-                    <div *ngIf="!status" class="btn btn-danger" (click)="statusInput(1)">Belum</div>
-                </div>
+
+                <!--JUDUL INPUT-->
                 <div class="col-md-2 col-sm-6">
                     <label><b>Judul</b></label>
                     <input class="form-control" [(ngModel)]="judul" name="judul" #judulInput="ngModel" required>
@@ -25,13 +30,17 @@
                     *required
                     </p>
                 </div>
-                <div class="col-md-2 col-sm-6">
+
+                <!--DESKRIPSI INPUT-->
+                <div class="col-md-3 col-sm-6">
                     <label><b>Deskripsi</b></label>
                     <textarea  class="form-control" [(ngModel)]="deskripsi" name="deskripsi" #deskripsiInput="ngModel" required></textarea>
                     <p [hidden]="deskripsiInput.valid" class="text-danger">
                     *required
                     </p>
                 </div>
+
+                <!--TANGGAL MULAI INPUT-->
                 <div class="col-md-2 col-sm-6">
                     <label><b>Tanggal Mulai</b></label>
                     <my-date-picker name="tgl_mulai" [options]="myDatePickerOptions"
@@ -40,6 +49,8 @@
                     *required
                     </p>
                 </div>
+
+                <!--TANGGAL SELESAI INPUT-->
                 <div class="col-md-2 col-sm-6">
                     <label><b>Tanggal Selesai</b></label>
                     <my-date-picker name="tgl_selesai" [options]="myDatePickerOptions"
@@ -48,6 +59,8 @@
                     *required
                     </p>
                 </div>
+
+                <!--PRIORITAS INPUT-->
                 <div class="col-md-2">
                     <label><b>Prioritas</b></label>
                     <select name='prioritas' [(ngModel)]='prioritas' class='form-control' (ngModelChange)="selectPrioritas($event)" #prioritasInput="ngModel" required>
@@ -59,30 +72,49 @@
                     *required
                     </p>
                 </div>
+
+                <!--SUBMIT BUTTON-->
                 <div class="col-md-1">
                     <label><b>Action</b></label><br>
                     <button type="submit" class="btn btn-primary">Tambah</button>
                 </div>
+
             </div>
+
+            <p [hidden]="showError" class="text-danger text-center"><b>Harap isi semua formulir</b></p>
         </form>
+        <!--END OF FORM-->
+
     </div>
 
+    <!--ROW BETWEEN FORM AND DATA-->
     <div class="col-12">
         <hr>
     </div>
 
-
+    <!--DATA SECTION-->
     <div class="row">
         <div class="col-12">
+
+            <!--DATA SECTION TITLE-->
             <div class="col-12">
-                <h4>Data Todo</h4>
+                <div>
+                    <span class="data-title text-left">Data Todo </span>
+                    <span class="data-desc text-left">(diurutkan berdasarkan prioritas)</span>
+                </div>
             </div>
+
+            <!--LOOP FOR DATA OBJECT-->
             <div class="row col-12 list" *ngFor="let d of data; let i = index;">
+
+                <!--DATA STATUS-->
                 <div class="col-md-1">
                     <label>Status :</label>
-                    <div *ngIf="d.status" class="btn btn-sm btn-success" (click)="changeStatus(i, 0)">Sudah</div>
-                    <div *ngIf="!d.status" class="btn btn-sm btn-danger" (click)="changeStatus(i, 1)">Belum</div>
+                    <button *ngIf="d.status" class="btn btn-sm btn-success" (click)="changeStatus(i, 0)">Sudah</button>
+                    <button *ngIf="!d.status" class="btn btn-sm btn-danger" (click)="changeStatus(i, 1)">Belum</button>
                 </div>
+
+                <!--DATA JUDUL-->
                 <div class="col-md-2 col-sm-6">
                     <label>Judul :</label>
                     <div *ngIf="!d.edit">
@@ -92,6 +124,8 @@
                         <input class="form-control" [(ngModel)]="d.judul" name="judul" #judulInput="ngModel" required>
                     </div>
                 </div>
+
+                <!--DATA DESKRIPSI-->
                 <div class="col-md-2 col-sm-6">
                     <label>Deskripsi :</label>
                     <div *ngIf="!d.edit">
@@ -101,6 +135,8 @@
                         <input class="form-control" [(ngModel)]="d.deskripsi" name="judul" #deskripsiInput="ngModel" required>
                     </div>
                 </div>
+
+                <!--DATA TANGGAL MULAI-->
                 <div class="col-md-2 col-sm-6">
                     <label>Tanggal Mulai :</label>
                     <div *ngIf="!d.edit">
@@ -111,6 +147,8 @@
                             [(ngModel)]="d.tgl_mulai" required></my-date-picker>
                     </div>
                 </div>
+
+                <!--DATA TANGGAL SELESAI-->
                 <div class="col-md-2 col-sm-6">
                     <label>Tanggal Selesai :</label>
                     <div *ngIf="!d.edit">
@@ -121,6 +159,8 @@
                             [(ngModel)]="d.tgl_selesai" required></my-date-picker>
                     </div>
                 </div>
+
+                <!--DATA PRIORITAS-->
                 <div class="col-md-2 col-sm-6">
                     <label>Prioritas :</label>
                     <div *ngIf="!d.edit">
@@ -129,13 +169,15 @@
                         <div *ngIf="d.prioritas == 3" class="badge badge-primary">Low</div>
                     </div>
                     <div *ngIf="d.edit">
-                        <select name='prioritas' [(ngModel)]='d.prioritas' class='form-control' (ngModelChange)="selectPrioritas($event)" #prioritasInput="ngModel" required>
+                        <select name='prioritas' [(ngModel)]='d.prioritas' class='form-control' required>
                             <option [ngValue]='1' [selected]="d.prioritas == 1">High</option>
                             <option [ngValue]='2' [selected]="d.prioritas == 2">Medium</option>
                             <option [ngValue]='3' [selected]="d.prioritas == 3">Low</option>
                         </select>
                     </div>
                 </div>
+
+                <!--ACTION FOR DATA-->
                 <div class="col-md-1 col-sm-6">
                     <label>Action :</label>
                     <div *ngIf="d.edit">
@@ -146,11 +188,14 @@
                         <button class="btn btn-sm btn-danger" (click)="delete(i)">X</button>
                     </div>
                 </div>
+
+                <!--ROW BETWEEN OTHER DATA-->
                 <div class="col-md-12">
                     <hr>
                 </div>
             </div>
 
+            <!--SHOW IF DATA EMPTY-->
             <div *ngIf="data.length == 0" class="text-center text-danger">
                 Data Empty
             </div>
