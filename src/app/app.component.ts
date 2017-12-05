@@ -80,16 +80,16 @@ export class AppComponent implements OnInit {
   }
 
   // change date to Indonesian date
-  public changeDate(input) {
-    const date = new Date(input);
-
-    const tanggal = date.getDate();
-    const bulan = this.month[date.getMonth()];
-    const tahun = date.getFullYear();
-
-    return tanggal + ' ' + bulan + ' ' + tahun;
-  }
-
+//  public changeDate(input) {
+//    const date = new Date(input);
+//
+//    const tanggal = date.getDate();
+//    const bulan = this.month[date.getMonth()];
+//    const tahun = date.getFullYear();
+//
+//    return tanggal + ' ' + bulan + ' ' + tahun;
+//  }
+//
   // change status for data row
   public changeStatus(index, input) {
     this.data[index].status = input;
@@ -195,7 +195,8 @@ export class AppComponent implements OnInit {
   // sort data by priority
   public sortByPriority() {
     this.data.sort(function(a, b) {
-      return a.prioritas - b.prioritas;
+      //return a.prioritas - b.prioritas;
+	  return a.tgl_selesai - b.tgl_selesai;
     });
   }
 
