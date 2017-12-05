@@ -201,22 +201,22 @@ export class AppComponent implements OnInit {
 
   // toastr if success delete row
   public deleteSuccess() {
-    this.toastrService.success('Berhasil Menghapus  Data', 'Berhasil');
+    this.toastrService.success('Successfully Deleted Todo Item', 'Success');
   }
 
   // toastr if success add data
   public pushSuccess() {
-    this.toastrService.success('Berhasil Tambah Data', 'Berhasil');
+    this.toastrService.success('Successfully Added Todo Item', 'Success');
   }
 
   // toastr if success change data row
   public statusSuccess() {
-    this.toastrService.success('Berhasil Ubah Status', 'Berhasil');
+    this.toastrService.success('Successfully Changed Status', 'Success');
   }
 
   // toastr if success save data row
   public saveSuccess() {
-    this.toastrService.success('Berhasil Ubah Data', 'Berhasil');
+    this.toastrService.success('Successfully Updated List', 'Success');
   }
 
 }
