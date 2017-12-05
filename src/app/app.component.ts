@@ -195,8 +195,8 @@ export class AppComponent implements OnInit {
   // sort data by priority
   public sortByPriority() {
     this.data.sort(function(a, b) {
-      //return a.prioritas - b.prioritas;
-	  return a.tgl_selesai - b.tgl_selesai;
+      return b.prioritas - a.prioritas;
+	  //return a.tgl_selesai - b.tgl_selesai;
     });
   }
 
