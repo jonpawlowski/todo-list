@@ -5,7 +5,7 @@
         <!--TITLE-->
         <h2 class="text-primary col-12">
             JP Lab Todo List
-            <span class="title-info">made with Angular 4, Bootstrap v4, toastr</span>
+            <span class="title-info">getting things done since 1980</span>
         </h2>
         
         <!--ROW-->
@@ -140,7 +140,7 @@
                 <div class="col-md-2 col-sm-6">
                     <label>Date Started :</label>
                     <div *ngIf="!d.edit">
-                        {{changeDate(d.tgl_mulai)}}
+                        {{d.tgl_mulai}}
                     </div>
                     <div *ngIf="d.edit">
                         <my-date-picker name="tgl_mulai" [options]="myDatePickerOptions"
@@ -152,7 +152,7 @@
                 <div class="col-md-2 col-sm-6">
                     <label>Date Completed :</label>
                     <div *ngIf="!d.edit">
-                        {{changeDate(d.tgl_selesai)}}
+                        {{d.tgl_selesai}}
                     </div>
                     <div *ngIf="d.edit">
                         <my-date-picker name="tgl_mulai" [options]="myDatePickerOptions"
