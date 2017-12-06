@@ -151,7 +151,7 @@ export class AppComponent implements OnInit {
 
       // change to formatted data
       this.tgl_mulai = this.tgl_mulai.formatted;
-	  this.tgl_selesai = checkCompletionDate();
+	  this.tgl_selesai = this.checkCompletionDate();
 	  
       // create json object before add to data object
       const dataInput = {
