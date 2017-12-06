@@ -54,9 +54,8 @@
                 <div class="col-md-2 col-sm-6">
                     <label><b>Date Completed</b></label>
                     <my-date-picker name="tgl_selesai" [options]="myDatePickerOptions"
-                        [(ngModel)]="tgl_selesai" #tgl_selesaiInput="ngModel" required></my-date-picker>
+                        [(ngModel)]="tgl_selesai" #tgl_selesaiInput="ngModel"></my-date-picker>
                     <p [hidden]="tgl_selesaiInput.valid" class="text-danger">
-                    *required
                     </p>
                 </div>
 
@@ -156,7 +155,7 @@
                     </div>
                     <div *ngIf="d.edit">
                         <my-date-picker name="tgl_mulai" [options]="myDatePickerOptions"
-                            [(ngModel)]="d.tgl_selesai" required></my-date-picker>
+                            [(ngModel)]="d.tgl_selesai"></my-date-picker>
                     </div>
                 </div>
 
