@@ -21,7 +21,8 @@ export class AppComponent implements OnInit {
   public myDatePickerOptions: IMyOptions = {
       dateFormat: 'mm/dd/yyyy',
       openSelectorOnInputClick: true,
-      editableDateField: false
+      editableDateField: false,
+	  maxDate: 0
   };
 
   // data variable
@@ -195,7 +196,7 @@ export class AppComponent implements OnInit {
   // sort data by priority
   public sortByPriority() {
     this.data.sort(function(a, b) {
-      return b.prioritas - a.prioritas;
+      return a.prioritas - b.prioritas;
 	  //return a.tgl_selesai - b.tgl_selesai;
     });
   }
