@@ -146,14 +146,17 @@ export class AppComponent implements OnInit {
   // submit to add data
   public submit() {
 
-    if (this.tgl_mulai && this.tgl_selesai && this.judul && this.deskripsi && this.prioritas) {
+    if (this.tgl_mulai && this.judul && this.deskripsi && this.prioritas) {
 
       this.showError = true;
 
       // change to formatted data
       this.tgl_mulai = this.tgl_mulai.formatted;
-      this.tgl_selesai = this.tgl_selesai.formatted;
-
+	  if !(this.tgl_selesai) {
+        this.tgl_selesai = "";
+	  } else {
+		  this.tgl_selesai = this.tgl_selesai.formatted;
+	  }
       // create json object before add to data object
       const dataInput = {
         'status': this.status,
