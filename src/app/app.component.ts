@@ -152,10 +152,10 @@ export class AppComponent implements OnInit {
 
       // change to formatted data
       this.tgl_mulai = this.tgl_mulai.formatted;
-	  if !(this.tgl_selesai) {
-        this.tgl_selesai = '';
+	  if (this.tgl_selesai != null && this.tgl_selesai != "") {
+        this.tgl_selesai = this.tgl_selesai.formatted;
 	  } else {
-		  this.tgl_selesai = this.tgl_selesai.formatted;
+		  this.tgl_selesai = "";
 	  }
       // create json object before add to data object
       const dataInput = {
