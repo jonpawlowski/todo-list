@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       dateFormat: 'mm/dd/yyyy',
       openSelectorOnInputClick: true,
       editableDateField: false,
-	  maxDate: 0
+	  endDate: new Date()
   };
 
   // data variable
@@ -153,7 +153,7 @@ export class AppComponent implements OnInit {
       // change to formatted data
       this.tgl_mulai = this.tgl_mulai.formatted;
 	  if !(this.tgl_selesai) {
-        this.tgl_selesai = "";
+        this.tgl_selesai = '';
 	  } else {
 		  this.tgl_selesai = this.tgl_selesai.formatted;
 	  }
