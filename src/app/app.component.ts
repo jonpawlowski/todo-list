@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       dateFormat: 'mm/dd/yyyy',
       openSelectorOnInputClick: true,
       editableDateField: false,
-	  endDate: new Date()
+	  disableSince: new Date()
   };
 
   // data variable
