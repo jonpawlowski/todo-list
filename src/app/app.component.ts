@@ -21,8 +21,7 @@ export class AppComponent implements OnInit {
   public myDatePickerOptions: IMyOptions = {
       dateFormat: 'mm/dd/yyyy',
       openSelectorOnInputClick: true,
-      editableDateField: false,
-	  disableSince: new Date()
+      editableDateField: false
   };
 
   // data variable
