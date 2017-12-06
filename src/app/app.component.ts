@@ -151,11 +151,8 @@ export class AppComponent implements OnInit {
 
       // change to formatted data
       this.tgl_mulai = this.tgl_mulai.formatted;
-	  if (this.tgl_selesai != null && this.tgl_selesai != "") {
-        this.tgl_selesai = this.tgl_selesai.formatted;
-	  } else {
-		  this.tgl_selesai = "";
-	  }
+	  this.tgl_selesai = checkCompletionDate();
+	  
       // create json object before add to data object
       const dataInput = {
         'status': this.status,
@@ -203,6 +200,16 @@ export class AppComponent implements OnInit {
     });
   }
 
+  // check for blank completion date
+  public checkCompletionDate() {
+	if (this.tgl_selesai != null && this.tgl_selesai != "") {
+        this.tgl_selesai = this.tgl_selesai.formatted;
+		return this.tgl_selesai;
+	  } else {
+		  this.tgl_selesai = "";
+		  return this.tgl_selesai;
+	  }  
+  }
   // toastr if success delete row
   public deleteSuccess() {
     this.toastrService.success('Successfully Deleted Todo Item', 'Success');
