@@ -2,7 +2,7 @@
 import { Component, Pipe, ViewChild, OnInit } from '@angular/core';
 import { IMyOptions } from 'mydatepicker';
 import { ToastrService } from 'ngx-toastr';
-
+import * as mongoose from "mongoose";
 
 @Component({
   selector: 'app-root',
