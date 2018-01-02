@@ -1,6 +1,8 @@
+import mongoose = require("mongoose");
 import { Component, Pipe, ViewChild, OnInit } from '@angular/core';
 import { IMyOptions } from 'mydatepicker';
 import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-root',
